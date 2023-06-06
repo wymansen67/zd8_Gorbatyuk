@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">zd8</string>
+    <string name="register">Регистрация</string>
+    <string name="task0">Вечерний поход в кино</string>
+    <string name="taskdescription0">Идем в кино с коллегами</string>
+    <string name="task1">Посылка с WB</string>
+    <string name="taskdescription1">Забрать посылку из пункта выдачи</string>
+    <string name="task2">Заказать детали</string>
+    <string name="taskdescription2">Забрать зарплату и заказать новые комплектующие в компьютер</string>
+    <string name="date0">10.02.2021</string>
+    <string name="time0">19:40</string>
+    <string name="date1">25.02.2021</string>
+    <string name="time1">13:00</string>
+    <string name="date2">27.02.2021</string>
+    <string name="time2">18:00</string>
+    <string name="alarm">Добавить будильник</string>
+    <string name="list">Добавить задачу</string>
+    <string name="tasklist">Список дел</string>
+    <string name="listcase">Список дел</string>
+    <string name="alarmtop">Будильник</string>
+    <string name="addtask">Изменить задачу</string>
+    <string name="removetask">Удалить задачу</string>
+    <string name="taskdescription">Описание задачи</string>
+</resources>
