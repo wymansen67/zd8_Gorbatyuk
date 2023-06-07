@@ -35,7 +35,7 @@ class UserLoginActivity : AppCompatActivity() {
         val message = AlertDialog.Builder(this)
         message.setTitle("Сообщение")
         message.setMessage("Сохранить данные для следующего входа?")
-        message.setPositiveButton("OK") { dialog, which ->
+        message.setPositiveButton("Да") { dialog, which ->
             val Psswd = psswd.text.toString()
             val Login = login.text.toString()
             val Email = email.text.toString()
@@ -47,21 +47,18 @@ class UserLoginActivity : AppCompatActivity() {
                 prefEditor.putString(pref_psswd, Psswd)
                 prefEditor.apply()
 
-                val duration = Toast.LENGTH_SHORT
                 Toast.makeText(
                     applicationContext,
                     "Вы успешно сохранили данные для входа",
-                    duration
+                    Toast.LENGTH_SHORT
                 ).show()
             } else {
-                val duration = Toast.LENGTH_SHORT
-                Toast.makeText(applicationContext, "Обнаружены пустые поля", duration).show()
+                Toast.makeText(applicationContext, "Обнаружены пустые поля", Toast.LENGTH_SHORT).show()
             }
         }
 
         message.setNegativeButton("Нет") { dialog, which ->
-            val duration = Toast.LENGTH_SHORT
-            Toast.makeText(applicationContext, "Вы отказались от сохранения", duration).show()
+            Toast.makeText(applicationContext, "Вы отказались от сохранения", Toast.LENGTH_SHORT).show()
         }
 
         val dialog = message.create()
@@ -84,15 +81,13 @@ class UserLoginActivity : AppCompatActivity() {
                     login.setText(savedLogin)
                     psswd.setText(savedPsswd)
 
-                    val duration = Toast.LENGTH_SHORT
-                    Toast.makeText(applicationContext, "Успешная авторизация" , duration).show()
+                    Toast.makeText(applicationContext, "Успешная авторизация" , Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else{
-                    val duration = Toast.LENGTH_SHORT
-                    Toast.makeText(applicationContext, "Введёные неверные данные для авторизации" , duration).show()
+                    Toast.makeText(applicationContext, "Введёные неверные данные для авторизации" , Toast.LENGTH_SHORT).show()
                 }
             } else if (enteredPsswd.isNotEmpty() && enteredLogin.isNotEmpty()) {
                 if (enteredPsswd == savedPsswd && enteredLogin == savedLogin){
@@ -100,23 +95,19 @@ class UserLoginActivity : AppCompatActivity() {
                     login.setText(savedLogin)
                     psswd.setText(savedPsswd)
 
-                    val duration = Toast.LENGTH_SHORT
-                    Toast.makeText(applicationContext, "Успешная авторизация" , duration).show()
+                    Toast.makeText(applicationContext, "Успешная авторизация" , Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
-                    val duration = Toast.LENGTH_SHORT
-                    Toast.makeText(applicationContext, "Введёные неверные данные для авторизации" , duration).show()
+                    Toast.makeText(applicationContext, "Введены неверные данные для авторизации", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                val duration = Toast.LENGTH_SHORT
-                Toast.makeText(applicationContext, "Поля не могут быть пустыми" , duration).show()
+                Toast.makeText(applicationContext, "Поля не могут быть пустыми" , Toast.LENGTH_SHORT).show()
             }
         } else {
-            val duration = Toast.LENGTH_SHORT
-            Toast.makeText(applicationContext, "Поля не могут быть пустыми" , duration).show()
+            Toast.makeText(applicationContext, "Поля не могут быть пустыми" , Toast.LENGTH_SHORT).show()
         }
     }
 }
